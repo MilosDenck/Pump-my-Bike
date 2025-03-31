@@ -1,0 +1,684 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2B69CE6A2AA7980C00BA42B4 /* Pump_my_BikeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69CE692AA7980C00BA42B4 /* Pump_my_BikeApp.swift */; };
+		2B69CE6E2AA7981100BA42B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B69CE6D2AA7981100BA42B4 /* Assets.xcassets */; };
+		2B69CE802AA7981200BA42B4 /* Pump_my_BikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69CE7F2AA7981200BA42B4 /* Pump_my_BikeTests.swift */; };
+		2B69CE8A2AA7981200BA42B4 /* Pump_my_BikeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69CE892AA7981200BA42B4 /* Pump_my_BikeUITests.swift */; };
+		2B69CE8C2AA7981200BA42B4 /* Pump_my_BikeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69CE8B2AA7981200BA42B4 /* Pump_my_BikeUITestsLaunchTests.swift */; };
+		2B69CE9A2AA799AF00BA42B4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69CE992AA799AF00BA42B4 /* Location.swift */; };
+		2B69CE9D2AA79B6100BA42B4 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69CE9C2AA79B6100BA42B4 /* LocationsView.swift */; };
+		2B69CEA22AA7B05D00BA42B4 /* MapAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69CEA12AA7B05D00BA42B4 /* MapAPI.swift */; };
+		2B69CEA42AA7B65100BA42B4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69CEA32AA7B65100BA42B4 /* LocationManager.swift */; };
+		2B69CEA62AA7C0D300BA42B4 /* LocationMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69CEA52AA7C0D300BA42B4 /* LocationMarkerView.swift */; };
+		2BB10DA22ABE33680029CE4D /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB10DA12ABE33680029CE4D /* Rating.swift */; };
+		2BB10DA42ABE36A30029CE4D /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB10DA32ABE36A30029CE4D /* RatingView.swift */; };
+		2BB10DA62AC225BE0029CE4D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB10DA52AC225BE0029CE4D /* NetworkService.swift */; };
+		2BB10DA82AC3592F0029CE4D /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB10DA72AC3592F0029CE4D /* LocationDetailView.swift */; };
+		2BB556A42AC3710900BE7E97 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB556A32AC3710900BE7E97 /* DetailViewModel.swift */; };
+		2BB69AFC2AA7CB7D00B92C24 /* LocationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB69AFB2AA7CB7D00B92C24 /* LocationCardView.swift */; };
+		2BD18DE92ABAE80D00314669 /* AddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD18DE82ABAE80D00314669 /* AddViewModel.swift */; };
+		2BD18DEB2ABAE98400314669 /* addView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD18DEA2ABAE98400314669 /* addView.swift */; };
+		2BD18DEE2ABB2BE000314669 /* CLLocation2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD18DED2ABB2BE000314669 /* CLLocation2D.swift */; };
+		2BD18DF02ABB845200314669 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD18DEF2ABB845200314669 /* UserData.swift */; };
+		2BE28D682AB8FFD3006119B3 /* openingHourDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE28D672AB8FFD2006119B3 /* openingHourDayView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2B69CE7C2AA7981200BA42B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2B69CE5E2AA7980C00BA42B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B69CE652AA7980C00BA42B4;
+			remoteInfo = "Pump my Bike";
+		};
+		2B69CE862AA7981200BA42B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2B69CE5E2AA7980C00BA42B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B69CE652AA7980C00BA42B4;
+			remoteInfo = "Pump my Bike";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2B69CE662AA7980C00BA42B4 /* Pump my Bike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pump my Bike.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B69CE692AA7980C00BA42B4 /* Pump_my_BikeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pump_my_BikeApp.swift; sourceTree = "<group>"; };
+		2B69CE6D2AA7981100BA42B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2B69CE7B2AA7981200BA42B4 /* Pump my BikeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pump my BikeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B69CE7F2AA7981200BA42B4 /* Pump_my_BikeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pump_my_BikeTests.swift; sourceTree = "<group>"; };
+		2B69CE852AA7981200BA42B4 /* Pump my BikeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pump my BikeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B69CE892AA7981200BA42B4 /* Pump_my_BikeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pump_my_BikeUITests.swift; sourceTree = "<group>"; };
+		2B69CE8B2AA7981200BA42B4 /* Pump_my_BikeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pump_my_BikeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2B69CE992AA799AF00BA42B4 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		2B69CE9C2AA79B6100BA42B4 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
+		2B69CEA12AA7B05D00BA42B4 /* MapAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAPI.swift; sourceTree = "<group>"; };
+		2B69CEA32AA7B65100BA42B4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		2B69CEA52AA7C0D300BA42B4 /* LocationMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMarkerView.swift; sourceTree = "<group>"; };
+		2BB10DA12ABE33680029CE4D /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
+		2BB10DA32ABE36A30029CE4D /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		2BB10DA52AC225BE0029CE4D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		2BB10DA72AC3592F0029CE4D /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
+		2BB556A32AC3710900BE7E97 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		2BB69AFB2AA7CB7D00B92C24 /* LocationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCardView.swift; sourceTree = "<group>"; };
+		2BC428ED2AA87120007063BF /* Pump-my-Bike-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pump-my-Bike-Info.plist"; sourceTree = SOURCE_ROOT; };
+		2BD18DE82ABAE80D00314669 /* AddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewModel.swift; sourceTree = "<group>"; };
+		2BD18DEA2ABAE98400314669 /* addView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addView.swift; sourceTree = "<group>"; };
+		2BD18DED2ABB2BE000314669 /* CLLocation2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocation2D.swift; sourceTree = "<group>"; };
+		2BD18DEF2ABB845200314669 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		2BE28D672AB8FFD2006119B3 /* openingHourDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = openingHourDayView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2B69CE632AA7980C00BA42B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B69CE782AA7981200BA42B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B69CE822AA7981200BA42B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2B69CE5D2AA7980C00BA42B4 = {
+			isa = PBXGroup;
+			children = (
+				2BC428ED2AA87120007063BF /* Pump-my-Bike-Info.plist */,
+				2B69CE682AA7980C00BA42B4 /* Pump my Bike */,
+				2B69CE7E2AA7981200BA42B4 /* Pump my BikeTests */,
+				2B69CE882AA7981200BA42B4 /* Pump my BikeUITests */,
+				2B69CE672AA7980C00BA42B4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2B69CE672AA7980C00BA42B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2B69CE662AA7980C00BA42B4 /* Pump my Bike.app */,
+				2B69CE7B2AA7981200BA42B4 /* Pump my BikeTests.xctest */,
+				2B69CE852AA7981200BA42B4 /* Pump my BikeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2B69CE682AA7980C00BA42B4 /* Pump my Bike */ = {
+			isa = PBXGroup;
+			children = (
+				2BD18DEC2ABB2BA200314669 /* Extensions */,
+				2B69CE692AA7980C00BA42B4 /* Pump_my_BikeApp.swift */,
+				2BBC32532AA8AA4F00A02C24 /* Manager */,
+				2B69CEA02AA7B03A00BA42B4 /* ViewModel */,
+				2B69CE9B2AA79B3800BA42B4 /* Views */,
+				2B69CE982AA7999700BA42B4 /* Models */,
+				2B69CE6D2AA7981100BA42B4 /* Assets.xcassets */,
+			);
+			path = "Pump my Bike";
+			sourceTree = "<group>";
+		};
+		2B69CE7E2AA7981200BA42B4 /* Pump my BikeTests */ = {
+			isa = PBXGroup;
+			children = (
+				2B69CE7F2AA7981200BA42B4 /* Pump_my_BikeTests.swift */,
+			);
+			path = "Pump my BikeTests";
+			sourceTree = "<group>";
+		};
+		2B69CE882AA7981200BA42B4 /* Pump my BikeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2B69CE892AA7981200BA42B4 /* Pump_my_BikeUITests.swift */,
+				2B69CE8B2AA7981200BA42B4 /* Pump_my_BikeUITestsLaunchTests.swift */,
+			);
+			path = "Pump my BikeUITests";
+			sourceTree = "<group>";
+		};
+		2B69CE982AA7999700BA42B4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2B69CE992AA799AF00BA42B4 /* Location.swift */,
+				2BD18DEF2ABB845200314669 /* UserData.swift */,
+				2BB10DA12ABE33680029CE4D /* Rating.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2B69CE9B2AA79B3800BA42B4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2B69CE9C2AA79B6100BA42B4 /* LocationsView.swift */,
+				2B69CEA52AA7C0D300BA42B4 /* LocationMarkerView.swift */,
+				2BB69AFB2AA7CB7D00B92C24 /* LocationCardView.swift */,
+				2BE28D672AB8FFD2006119B3 /* openingHourDayView.swift */,
+				2BD18DEA2ABAE98400314669 /* addView.swift */,
+				2BB10DA32ABE36A30029CE4D /* RatingView.swift */,
+				2BB10DA72AC3592F0029CE4D /* LocationDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2B69CEA02AA7B03A00BA42B4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2B69CEA12AA7B05D00BA42B4 /* MapAPI.swift */,
+				2BD18DE82ABAE80D00314669 /* AddViewModel.swift */,
+				2BB10DA52AC225BE0029CE4D /* NetworkService.swift */,
+				2BB556A32AC3710900BE7E97 /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2BBC32532AA8AA4F00A02C24 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				2B69CEA32AA7B65100BA42B4 /* LocationManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		2BD18DEC2ABB2BA200314669 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2BD18DED2ABB2BE000314669 /* CLLocation2D.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2B69CE652AA7980C00BA42B4 /* Pump my Bike */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B69CE8F2AA7981200BA42B4 /* Build configuration list for PBXNativeTarget "Pump my Bike" */;
+			buildPhases = (
+				2B69CE622AA7980C00BA42B4 /* Sources */,
+				2B69CE632AA7980C00BA42B4 /* Frameworks */,
+				2B69CE642AA7980C00BA42B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pump my Bike";
+			productName = "Pump my Bike";
+			productReference = 2B69CE662AA7980C00BA42B4 /* Pump my Bike.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2B69CE7A2AA7981200BA42B4 /* Pump my BikeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B69CE922AA7981200BA42B4 /* Build configuration list for PBXNativeTarget "Pump my BikeTests" */;
+			buildPhases = (
+				2B69CE772AA7981200BA42B4 /* Sources */,
+				2B69CE782AA7981200BA42B4 /* Frameworks */,
+				2B69CE792AA7981200BA42B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2B69CE7D2AA7981200BA42B4 /* PBXTargetDependency */,
+			);
+			name = "Pump my BikeTests";
+			productName = "Pump my BikeTests";
+			productReference = 2B69CE7B2AA7981200BA42B4 /* Pump my BikeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2B69CE842AA7981200BA42B4 /* Pump my BikeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B69CE952AA7981200BA42B4 /* Build configuration list for PBXNativeTarget "Pump my BikeUITests" */;
+			buildPhases = (
+				2B69CE812AA7981200BA42B4 /* Sources */,
+				2B69CE822AA7981200BA42B4 /* Frameworks */,
+				2B69CE832AA7981200BA42B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2B69CE872AA7981200BA42B4 /* PBXTargetDependency */,
+			);
+			name = "Pump my BikeUITests";
+			productName = "Pump my BikeUITests";
+			productReference = 2B69CE852AA7981200BA42B4 /* Pump my BikeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2B69CE5E2AA7980C00BA42B4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					2B69CE652AA7980C00BA42B4 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					2B69CE7A2AA7981200BA42B4 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 2B69CE652AA7980C00BA42B4;
+					};
+					2B69CE842AA7981200BA42B4 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 2B69CE652AA7980C00BA42B4;
+					};
+				};
+			};
+			buildConfigurationList = 2B69CE612AA7980C00BA42B4 /* Build configuration list for PBXProject "Pump my Bike" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2B69CE5D2AA7980C00BA42B4;
+			productRefGroup = 2B69CE672AA7980C00BA42B4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2B69CE652AA7980C00BA42B4 /* Pump my Bike */,
+				2B69CE7A2AA7981200BA42B4 /* Pump my BikeTests */,
+				2B69CE842AA7981200BA42B4 /* Pump my BikeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2B69CE642AA7980C00BA42B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B69CE6E2AA7981100BA42B4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B69CE792AA7981200BA42B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B69CE832AA7981200BA42B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2B69CE622AA7980C00BA42B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BB556A42AC3710900BE7E97 /* DetailViewModel.swift in Sources */,
+				2BB69AFC2AA7CB7D00B92C24 /* LocationCardView.swift in Sources */,
+				2BD18DE92ABAE80D00314669 /* AddViewModel.swift in Sources */,
+				2BD18DEB2ABAE98400314669 /* addView.swift in Sources */,
+				2BB10DA42ABE36A30029CE4D /* RatingView.swift in Sources */,
+				2BE28D682AB8FFD3006119B3 /* openingHourDayView.swift in Sources */,
+				2BD18DF02ABB845200314669 /* UserData.swift in Sources */,
+				2B69CE9D2AA79B6100BA42B4 /* LocationsView.swift in Sources */,
+				2B69CEA22AA7B05D00BA42B4 /* MapAPI.swift in Sources */,
+				2B69CE9A2AA799AF00BA42B4 /* Location.swift in Sources */,
+				2BD18DEE2ABB2BE000314669 /* CLLocation2D.swift in Sources */,
+				2BB10DA82AC3592F0029CE4D /* LocationDetailView.swift in Sources */,
+				2BB10DA62AC225BE0029CE4D /* NetworkService.swift in Sources */,
+				2B69CE6A2AA7980C00BA42B4 /* Pump_my_BikeApp.swift in Sources */,
+				2B69CEA42AA7B65100BA42B4 /* LocationManager.swift in Sources */,
+				2B69CEA62AA7C0D300BA42B4 /* LocationMarkerView.swift in Sources */,
+				2BB10DA22ABE33680029CE4D /* Rating.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B69CE772AA7981200BA42B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B69CE802AA7981200BA42B4 /* Pump_my_BikeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B69CE812AA7981200BA42B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B69CE8A2AA7981200BA42B4 /* Pump_my_BikeUITests.swift in Sources */,
+				2B69CE8C2AA7981200BA42B4 /* Pump_my_BikeUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2B69CE7D2AA7981200BA42B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2B69CE652AA7980C00BA42B4 /* Pump my Bike */;
+			targetProxy = 2B69CE7C2AA7981200BA42B4 /* PBXContainerItemProxy */;
+		};
+		2B69CE872AA7981200BA42B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2B69CE652AA7980C00BA42B4 /* Pump my Bike */;
+			targetProxy = 2B69CE862AA7981200BA42B4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2B69CE8D2AA7981200BA42B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2B69CE8E2AA7981200BA42B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2B69CE902AA7981200BA42B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 6ND36LBVDY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Pump-my-Bike-Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This App requires acce to your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This App need your Location";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Milos-Denck.Pump-my-Bike";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2B69CE912AA7981200BA42B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 6ND36LBVDY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Pump-my-Bike-Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This App requires acce to your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This App need your Location";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Milos-Denck.Pump-my-Bike";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2B69CE932AA7981200BA42B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6ND36LBVDY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Milos-Denck.Pump-my-BikeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pump my Bike.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Pump my Bike";
+			};
+			name = Debug;
+		};
+		2B69CE942AA7981200BA42B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6ND36LBVDY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Milos-Denck.Pump-my-BikeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pump my Bike.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Pump my Bike";
+			};
+			name = Release;
+		};
+		2B69CE962AA7981200BA42B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6ND36LBVDY;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Milos-Denck.Pump-my-BikeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Pump my Bike";
+			};
+			name = Debug;
+		};
+		2B69CE972AA7981200BA42B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6ND36LBVDY;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Milos-Denck.Pump-my-BikeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Pump my Bike";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2B69CE612AA7980C00BA42B4 /* Build configuration list for PBXProject "Pump my Bike" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B69CE8D2AA7981200BA42B4 /* Debug */,
+				2B69CE8E2AA7981200BA42B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B69CE8F2AA7981200BA42B4 /* Build configuration list for PBXNativeTarget "Pump my Bike" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B69CE902AA7981200BA42B4 /* Debug */,
+				2B69CE912AA7981200BA42B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B69CE922AA7981200BA42B4 /* Build configuration list for PBXNativeTarget "Pump my BikeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B69CE932AA7981200BA42B4 /* Debug */,
+				2B69CE942AA7981200BA42B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B69CE952AA7981200BA42B4 /* Build configuration list for PBXNativeTarget "Pump my BikeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B69CE962AA7981200BA42B4 /* Debug */,
+				2B69CE972AA7981200BA42B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2B69CE5E2AA7980C00BA42B4 /* Project object */;
+}
