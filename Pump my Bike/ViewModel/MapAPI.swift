@@ -79,7 +79,7 @@ class MapAPI: ObservableObject {
 
             self.currentPin = pin
             self.currentLocation = searchItem.placemark.coordinate
-            self.region = MKCoordinateRegion(center: searchItem.placemark.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+            self.region = MKCoordinateRegion(center: searchItem.placemark.coordinate, span: self.region.span)
         }
     }
     
@@ -118,7 +118,6 @@ class MapAPI: ObservableObject {
                             
                             self.currentPin = pin
                             self.currentLocation = coordinates
-                            self.region = MKCoordinateRegion(center: coordinates, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
                         }
                     }
                     else {
@@ -304,8 +303,8 @@ class MapAPI: ObservableObject {
     }
 
     
-    func updateRegion(coordinates: CLLocationCoordinate2D){
-        self.region = MKCoordinateRegion(center: coordinates, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+    func updateRegion(coordinates: CLLocationCoordinate2D, span: MKCoordinateSpan?){
+        self.region = MKCoordinateRegion(center: coordinates, span: span ?? self.region.span)
     }
     
   

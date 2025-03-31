@@ -221,7 +221,7 @@ class OpeningHourAddViewModel: ObservableObject{
     @Published var saturday: OpeningHour? = nil
     @Published var sunday: OpeningHour? = nil
     
-    public let SERVER_IP = "http://192.168.178.36:8000"
+    public let SERVER_IP = "http://192.168.10.39:8000"
     
     var networkService = NetworkService()
     

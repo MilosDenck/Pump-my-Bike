@@ -9,7 +9,7 @@ import Foundation
 
 class NetworkService{
     
-    public let SERVER_IP = "http://192.168.178.36:8000"
+    public let SERVER_IP = "http://100.97.176.235:8000"
     
     func generateRequest(httpBody: Data, url: URL, headerValues: [String:String]) -> URLRequest{
         

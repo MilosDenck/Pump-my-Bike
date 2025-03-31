@@ -36,8 +36,7 @@ struct LocationsView: View {
     //@State private var tapLocation: CLLocationCoordinate2D?
     @State var recording = false
     @State var tapped = false
-    
-    
+
     var body: some View {
         NavigationStack{
             ZStack{
@@ -109,28 +108,11 @@ struct LocationsView: View {
         }
     }
     
+    @State private var visibleRegion: MKCoordinateRegion?
+    
     var MapView: some View{
+
         MapReader{ reader in
-            let longPressDrag = DragGesture(minimumDistance: 0)
-                .onChanged { value in
-                    if value.translation == .zero {
-                        self.longPressLocation = value.startLocation
-                    }
-                }
-                .sequenced(before: DragGesture(minimumDistance: 0))
-                .onEnded { _ in
-                    if !showRatingView{
-                        if let loc = longPressLocation{
-                            if let coordinates = reader.convert(loc, from: .local){
-                                mapAPI.searchPlacefromCoordinates(coordinates: coordinates)
-                                mapAPI.dismissRoute()
-                                showCardView = true
-                            }
-                        }
-                        self.longPressLocation = nil
-                        recording = false
-                    }
-                }
             
             Map(position: $mapAPI.cameraPosition){
                 ForEach(mapAPI.pins, id: \.self.id){ pin in
@@ -151,19 +133,23 @@ struct LocationsView: View {
                             }
                         }
                         .scaleEffect(mapAPI.currentPin?.id == pin.id ? 1 : 0.7)
-                        .onTapGesture {
+                        .simultaneousGesture(TapGesture().onEnded{Task {
+                            print("Tap 0")
                             if !showRatingView{
                                 withAnimation{
-                                    mapAPI.updateRegion(coordinates: pin.coodinates)
+                                    print("Tap 1")
+                                    mapAPI.updateRegion(coordinates: pin.coodinates, span: visibleRegion?.span)
                                     mapAPI.currentPin = pin
                                     mapAPI.dismissRoute()
                                     /*if(pin.type == 1){
-                                        mapAPI.getFilenames(id: pin.locationId!)
-                                    }*/
+                                     mapAPI.getFilenames(id: pin.locationId!)
+                                     }*/
                                     showCardView = true
                                 }
                             }
                         }
+                        })
+                                             
                     }
                 }
                 if let route = mapAPI.route{
@@ -171,12 +157,35 @@ struct LocationsView: View {
                         .stroke(.blue,lineWidth: 7)
                 }
             }
-            .onTapGesture { /// 1.
-                print("Tapped")
-                tapped = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { tapped = false }
+            .onMapCameraChange(frequency: .continuous){ context in
+                visibleRegion = context.region
             }
-            .gesture(longPressDrag)
+            .simultaneousGesture(
+                LongPressGesture(minimumDuration: 0.1)
+                    .sequenced(before: DragGesture(minimumDistance: 0))
+                    .onChanged { value in
+                        switch value {
+                        case .second(true, let drag?):
+                            longPressLocation = drag.location
+                        default:
+                            break
+                        }
+                    }
+                    .onEnded { _ in
+                        if let point = longPressLocation,
+                           let coord = reader.convert(point, from: .local) {
+                            
+                            mapAPI.searchPlacefromCoordinates(coordinates: coord)
+                            mapAPI.dismissRoute()
+                            showCardView = true
+                            withAnimation{
+                                mapAPI.updateRegion(coordinates: coord, span: visibleRegion?.span)
+                            }
+                        }
+                        longPressLocation = nil
+                    }
+            )
+            //.simultaneousGesture(longPressDrag)
             .ignoresSafeArea()
 
         }
