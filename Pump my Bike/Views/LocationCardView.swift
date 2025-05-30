@@ -40,7 +40,7 @@ struct LocationCardView: View {
             let currentLoc = mapAPI.pumps.first(where: {$0.id == mapAPI.currentPin?.locationId})
             VStack{
                 if let image = currentLoc?.thumbnail {
-                    let url = "\(mapAPI.networkService.SERVER_IP)/\(currentLoc!.id!)/\(image)"
+                    let url = "\(mapAPI.networkService.SERVER_IP)/Images/\(currentLoc!.id!)/\(image)"
                     AsyncImage(url: URL(string:url)!){ phase in
                         switch phase {
                         case .empty:
@@ -152,7 +152,7 @@ struct LocationCardView: View {
         }
     }
     
-    var LocationCard: some View{
+    var LocationCard: some View  {
         
         VStack{
             Text(mapAPI.pins.first(where: {$0.type == 0})?.name ?? "Error")
@@ -166,8 +166,10 @@ struct LocationCardView: View {
             }
             HStack{
                 Button(action: {
-                    currentLocation = mapAPI.pins.first(where: {$0.type == 0})!.coodinates
-                    mapAPI.updatePumps(coordinates: currentLocation ?? CLLocationCoordinate2D(latitude: 0, longitude: 0))
+                    Task{
+                        currentLocation = mapAPI.pins.first(where: {$0.type == 0})!.coodinates
+                        await mapAPI.updatePumps(coordinates: currentLocation ?? CLLocationCoordinate2D(latitude: 0, longitude: 0))
+                    }
                 }, label: {
                     Text("Search near")
                         .foregroundColor(.white)

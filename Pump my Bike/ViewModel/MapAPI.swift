@@ -49,7 +49,7 @@ class MapAPI: ObservableObject {
     
     @Published var thumbnail: UIImage?
     
-    init(){
+    init() {
         self.errorHandler = ErrorHandler()
         self.networkService = NetworkService()
         if let location = manager.location {
@@ -63,10 +63,12 @@ class MapAPI: ObservableObject {
         }
         
         
-        
-        updatePumps(coordinates: region.center)
         currentLocation = manager.location
         
+    }
+    
+    func loadData() async {
+            await updatePumps(coordinates: region.center)
     }
     
     func searchPlace(name: String){
@@ -179,17 +181,28 @@ class MapAPI: ObservableObject {
         }
         
         let request = networkService.generateRequest(httpBody: jsonData, url: url, headerValues: ["application/json":"Content-Type"])
-        networkService.postRequest(request: request){ data in
-            guard let image = image else{
+
+        networkService.postRequest(request: request) { data in
+            if let pumpData = try? JSONDecoder().decode(PumpData.self, from: data) {
+                DispatchQueue.main.async {
+                    self.pumps.append(pumpData)
+                    let newPin = LocationPin(pumpData: pumpData)
+                    self.pins.insert(newPin, at: 0)
+                }
+            }
+            guard let image = image else {
                 return
             }
+            
             guard let id = try? JSONDecoder().decode(ID.self, from: data) else {
                 print(data)
                 return
             }
-            self.uploadImage(image: image, pumpId: id.id)
-            
+            DispatchQueue.main.async {
+                self.uploadImage(image: image, pumpId: id.id)
+            }
         }
+
         
     }
     
@@ -225,33 +238,29 @@ class MapAPI: ObservableObject {
         return body
     }
     
-    func updatePump(id: Int, callback: @escaping (PumpData) -> ()){
+    func updatePump(id: Int) async throws -> PumpData {
         let url_string = "\(networkService.SERVER_IP)/location?id=\(id)"
-        networkService.getRequest(url_string: url_string){ data, error in
-            if let error = error{
-                self.errorHandler.triggerError(name: "Error", message: error.localizedDescription)
-                return
+        
+        return try await withCheckedThrowingContinuation { continuation in
+            networkService.getRequest(url_string: url_string) { data, error in
+                if let error = error {
+                    self.errorHandler.triggerError(name: "Error", message: error.localizedDescription)
+                    continuation.resume(throwing: error)
+                    return
+                }
+                guard let data = data,
+                      let pumpData = try? JSONDecoder().decode(PumpDatas.self, from: data),
+                      let pump = pumpData.first else {
+                    let err = NSError(domain: "DecodingError", code: 0, userInfo: nil)
+                    continuation.resume(throwing: err)
+                    return
+                }
+                
+                continuation.resume(returning: pump)
             }
-            guard let data = data else{
-                return
-            }
-            guard let pumpData = try? JSONDecoder().decode(PumpDatas.self, from: data) else{
-                return
-            }
-            
-            guard var currentpump = self.pumps.first(where: {$0.id == id}) else{
-                return
-            }
-            
-            guard let pump = pumpData.first else{
-                return
-            }
-            
-            callback(pump)
-            
-            self.updatePumps(coordinates: CLLocationCoordinate2D(latitude: pump.lat, longitude: pump.lon))
         }
     }
+
     /*
     func getFilenames(id: Int){
         self.filenames = nil
@@ -272,7 +281,7 @@ class MapAPI: ObservableObject {
         }
     }*/
     
-    func updatePumps(coordinates: CLLocationCoordinate2D){
+    func updatePumps(coordinates: CLLocationCoordinate2D) async {
         let url_string = "\(networkService.SERVER_IP)/locations?lat=\(coordinates.latitude)&lon=\(coordinates.longitude)&maxdist=20"
         
         networkService.getRequest(url_string: url_string){ data, error in

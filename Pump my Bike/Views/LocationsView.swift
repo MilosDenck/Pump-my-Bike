@@ -58,8 +58,15 @@ struct LocationsView: View {
                 Alert(title: Text(mapAPI.errorHandler.errorMessage?.name ?? ""), message: Text(mapAPI.errorHandler.errorMessage?.massage ?? ""), dismissButton: .default(Text("OK")))
                     }
             .sheet(isPresented: $showAddView, content: {addView(name: mapAPI.currentPin?.name ?? "", showAddView: $showAddView).environmentObject(mapAPI)})
+            .navigationBarHidden(true)
+            .onAppear {
+                Task {
+                    await mapAPI.loadData()
+                }
+            }
             
         }
+        
     }
     
     var routeCard: some View{
@@ -185,9 +192,6 @@ struct LocationsView: View {
                         longPressLocation = nil
                     }
             )
-            //.simultaneousGesture(longPressDrag)
-            .ignoresSafeArea()
-
         }
     }
     @FocusState private var searchBarActive: Bool

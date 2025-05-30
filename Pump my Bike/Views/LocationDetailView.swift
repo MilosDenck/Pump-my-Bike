@@ -65,7 +65,7 @@ struct LocationDetailView: View {
             if let names = ldvm.filenames{
                 TabView{
                     ForEach(names, id: \.self){ image in
-                        let url = "\(mapAPI.networkService.SERVER_IP)/\(pump.id!)/\(image)"
+                        let url = "\(mapAPI.networkService.SERVER_IP)/Images/\(pump.id!)/\(image)"
                         AsyncImage(url: URL(string:url)!){ phase in
                             switch phase {
                             case .empty:
@@ -179,8 +179,13 @@ struct LocationDetailView: View {
                 if let id = pump.id{
                     ldvm.getRatings(id: id)
                     ldvm.getFilenames(id: id)
-                    mapAPI.updatePump(id: id){ data in
-                        pump = data
+                    Task {
+                        do {
+                            let data = try await mapAPI.updatePump(id: id)
+                            pump = data
+                        } catch {
+                            print("Fehler: \(error)")
+                        }
                     }
                 }
             }

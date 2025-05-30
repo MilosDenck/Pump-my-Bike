@@ -9,7 +9,7 @@ import Foundation
 
 class NetworkService{
     
-    public let SERVER_IP = "http://100.97.176.235:8000"
+    public let SERVER_IP = "https://pmb-api.milosdenck.de"
     
     func generateRequest(httpBody: Data, url: URL, headerValues: [String:String]) -> URLRequest{
         
@@ -33,7 +33,7 @@ class NetworkService{
         URLSession.shared.dataTask(with: url){ (data, response, error) in
             
             if let err = error{
-                completionBlock(nil, error)
+                completionBlock(nil, err)
                 return
             }
             

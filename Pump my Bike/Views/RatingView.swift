@@ -27,6 +27,7 @@ struct RatingView: View {
                             .frame(width: 30)
                             .foregroundColor(.yellow)
                             .onTapGesture {
+                                if(self.rating + i + 1 > 5) {return}
                                 self.rating = i + 1
                             }
                             .shadow(radius: 3)
@@ -38,6 +39,7 @@ struct RatingView: View {
                             .frame(width: 30)
                             .foregroundColor(.secondary)
                             .onTapGesture {
+                                if(self.rating + i + 1 > 5) {return}
                                 self.rating = self.rating + i + 1
                             }
                             .shadow(radius: 3)
@@ -49,8 +51,6 @@ struct RatingView: View {
                 .padding(10)
                 .lineLimit(5...7)
                 .background(RoundedRectangle(cornerSize: CGSize(width: 5, height: 5)).fill(.white.opacity(0.5)).stroke(.gray, lineWidth: 1).shadow(radius: 5))
-            
-
                 .padding(5)
             HStack{
                 Button(action: {
