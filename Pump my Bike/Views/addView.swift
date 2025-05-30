@@ -16,6 +16,8 @@ struct addView: View {
     @StateObject private var addViewModel = pumpAddViewModel()
     @Binding var showAddView: Bool
     
+    let manager = LocationManager()
+    
     var body: some View {
         NavigationStack{
             
@@ -36,6 +38,7 @@ struct addView: View {
                                 let newPump = addViewModel.getData(name: name, location: loc)
                                 await mapAPI.uploadNewPump(pumpData: newPump, image: addViewModel.photoSelectorViewModel.selectedImage)
                                 showAddView = false
+                                mapAPI.updatePumps(coordinates: loc)
                             }else{
                                 mapAPI.errorHandler.triggerError(name: "Error", message: "Location not found")
                             }

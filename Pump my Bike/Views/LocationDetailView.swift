@@ -65,7 +65,7 @@ struct LocationDetailView: View {
             if let names = ldvm.filenames{
                 TabView{
                     ForEach(names, id: \.self){ image in
-                        let url = "\(mapAPI.networkService.SERVER_IP)/\(pump.id!)/\(image)"
+                        let url = "\(mapAPI.networkService.SERVER_IP)/Images/\(pump.id!)/\(image)"
                         AsyncImage(url: URL(string:url)!){ phase in
                             switch phase {
                             case .empty:

@@ -40,7 +40,7 @@ struct LocationCardView: View {
             let currentLoc = mapAPI.pumps.first(where: {$0.id == mapAPI.currentPin?.locationId})
             VStack{
                 if let image = currentLoc?.thumbnail {
-                    let url = "\(mapAPI.networkService.SERVER_IP)/\(currentLoc!.id!)/\(image)"
+                    let url = "\(mapAPI.networkService.SERVER_IP)/Images/\(currentLoc!.id!)/\(image)"
                     AsyncImage(url: URL(string:url)!){ phase in
                         switch phase {
                         case .empty:

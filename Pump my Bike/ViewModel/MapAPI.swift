@@ -239,10 +239,6 @@ class MapAPI: ObservableObject {
                 return
             }
             
-            guard var currentpump = self.pumps.first(where: {$0.id == id}) else{
-                return
-            }
-            
             guard let pump = pumpData.first else{
                 return
             }
