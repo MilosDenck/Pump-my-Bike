@@ -21,7 +21,7 @@ struct Pump_my_BikeApp: App {
 
     var body: some Scene {
         WindowGroup {
-            LocationsView(userID: userIDString)//.environmentObject(vm)
+            MainView(userID: userIDString)//.environmentObject(vm)
         }
     }
 }

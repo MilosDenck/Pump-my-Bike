@@ -33,6 +33,10 @@ struct PumpData: Codable{
 
 typealias PumpDatas = [PumpData]
 
+class ImageFilename: Codable {
+    var filename: String
+}
+
 class OpeningHours: Codable, ObservableObject{
     
     var alwaysOpen: Bool

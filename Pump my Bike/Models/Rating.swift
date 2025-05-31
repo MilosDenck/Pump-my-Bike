@@ -13,3 +13,21 @@ struct Rating: Codable, Hashable{
     var comment: String
     var locationId: Int
 }
+
+
+
+struct RatingData: Decodable {
+    let id: Int
+    let rating: Int
+    let comment: String
+    let createdAt: String
+    let username: String
+
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case rating
+        case comment
+        case createdAt
+        case username = "user.username"
+    }
+}

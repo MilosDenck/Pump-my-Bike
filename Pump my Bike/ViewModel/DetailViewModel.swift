@@ -33,7 +33,6 @@ class DetailViewModel: ObservableObject{
                 return
             }
             guard let files = try? JSONDecoder().decode([String].self, from: data) else {
-                print("decode gone wrong")
                 return
             }
             self.filenames = files

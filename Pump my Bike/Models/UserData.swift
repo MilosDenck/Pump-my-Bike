@@ -23,4 +23,16 @@ class UserData: ObservableObject{
     }
 }
 
+struct Root: Decodable {
+    let user: User
+}
+
+struct User: Decodable {
+    let loginMethods: [LoginMethod]
+}
+
+struct LoginMethod: Decodable {
+    let verified: Int
+}
+
 

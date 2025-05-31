@@ -7,27 +7,67 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B27B0282DEB57A200527287 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B27B0272DEB57A200527287 /* Launch Screen.storyboard */; };
+		2B27B02A2DEB57F000527287 /* pmb-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B27B0292DEB57F000527287 /* pmb-logo.png */; };
+		2B2AE6FE2DEFB14200376503 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE6FD2DEFB14200376503 /* TokenManager.swift */; };
+		2B2AE70E2DF1E20900376503 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE7092DF1E20900376503 /* AuthView.swift */; };
+		2B2AE70F2DF1E20900376503 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE70A2DF1E20900376503 /* LoginView.swift */; };
+		2B2AE7102DF1E20900376503 /* ResetPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE70B2DF1E20900376503 /* ResetPasswordScreen.swift */; };
+		2B2AE7112DF1E20900376503 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE70C2DF1E20900376503 /* SignupView.swift */; };
+		2B2AE7142DF1E27300376503 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE7132DF1E27300376503 /* SearchBar.swift */; };
+		2B2AE7162DF1E6EA00376503 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE7152DF1E6EA00376503 /* AuthManager.swift */; };
+		2B2AE7182DF1E92300376503 /* UIItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE7172DF1E92300376503 /* UIItems.swift */; };
+		2B2AE71A2DF1ED1D00376503 /* SearchItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE7192DF1ED1D00376503 /* SearchItems.swift */; };
+		2B2AE71C2DF1F01C00376503 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE71B2DF1F01C00376503 /* Menu.swift */; };
+		2B2AE71F2DF23E7900376503 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE71E2DF23E7900376503 /* CardView.swift */; };
+		2B2AE7212DF23E9F00376503 /* PumpCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE7202DF23E9F00376503 /* PumpCardView.swift */; };
+		2B2AE7232DF240F800376503 /* LocationCardView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE7222DF240F800376503 /* LocationCardView2.swift */; };
+		2B2AE7252DF2EEB300376503 /* RouteCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE7242DF2EEB300376503 /* RouteCard.swift */; };
+		2B2AE7272DF2F05E00376503 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE7262DF2F05E00376503 /* MapView.swift */; };
+		2B2AE72D2DF2FF2400376503 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE72C2DF2FF2400376503 /* OverlayView.swift */; };
+		2B2AE72F2DF31A0200376503 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE72E2DF319F900376503 /* View.swift */; };
+		2B2AE7322DF3394600376503 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE7312DF3394600376503 /* CustomTextField.swift */; };
+		2B2AE7342DF33ADF00376503 /* AddPumpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE7332DF33ADF00376503 /* AddPumpView.swift */; };
+		2B2AE7362DF3413000376503 /* CustomTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE7352DF3413000376503 /* CustomTextEditor.swift */; };
+		2B2AE7382DF345E400376503 /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE7372DF345E400376503 /* CustomSecureField.swift */; };
+		2B2AE73C2DF34A0300376503 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE73B2DF34A0300376503 /* CustomButton.swift */; };
+		2B2AE73E2DF35E3E00376503 /* PhotoSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE73D2DF35E3E00376503 /* PhotoSelector.swift */; };
+		2B2AE7412DF3612F00376503 /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE7402DF3612500376503 /* CornerRadius.swift */; };
+		2B2AE7432DF37B5300376503 /* PumpDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE7422DF37B5300376503 /* PumpDetailView.swift */; };
+		2B2AE7452DF388A300376503 /* TextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE7442DF388A300376503 /* TextBox.swift */; };
+		2B2AE7472DF3930400376503 /* PictureCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE7462DF3930400376503 /* PictureCarousel.swift */; };
+		2B2AE7492DF39A0000376503 /* OpeningHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2AE7482DF39A0000376503 /* OpeningHours.swift */; };
+		2B5D8DD42DF3B67900E63E5A /* OperningHourConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D8DD32DF3B67900E63E5A /* OperningHourConfigurator.swift */; };
+		2B5D8DD62DF3B84B00E63E5A /* OpeningHourUploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D8DD52DF3B84B00E63E5A /* OpeningHourUploadView.swift */; };
+		2B5D8DD82DF3B88B00E63E5A /* DescriptionUploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D8DD72DF3B88B00E63E5A /* DescriptionUploadView.swift */; };
+		2B5D8DDA2DF3B8C600E63E5A /* PhotoUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D8DD92DF3B8C600E63E5A /* PhotoUploader.swift */; };
+		2B5D8DDC2DF3B94D00E63E5A /* Opening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D8DDB2DF3B94D00E63E5A /* Opening.swift */; };
+		2B5D8DDE2DF3BB3500E63E5A /* OpeningHourAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D8DDD2DF3BB3400E63E5A /* OpeningHourAddViewModel.swift */; };
+		2B5D8DE02DF3BB8200E63E5A /* PhotoSelectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D8DDF2DF3BB8200E63E5A /* PhotoSelectorViewModel.swift */; };
+		2B5D8DE22DF46CE800E63E5A /* RatingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D8DE12DF46CE800E63E5A /* RatingAPI.swift */; };
+		2B5D8DE42DF477BB00E63E5A /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D8DE32DF477BB00E63E5A /* Comment.swift */; };
+		2B5D8DE62DF4883100E63E5A /* RatingAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D8DE52DF4883100E63E5A /* RatingAddView.swift */; };
+		2B5D8DE82DF4BDE500E63E5A /* CustomLongButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D8DE72DF4BDE500E63E5A /* CustomLongButton.swift */; };
+		2B5D8DEB2DF4E5B200E63E5A /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D8DEA2DF4E5AA00E63E5A /* ImagePickerView.swift */; };
+		2B5D8DED2DF4F93E00E63E5A /* VerifyEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D8DEC2DF4F93E00E63E5A /* VerifyEmailView.swift */; };
 		2B69CE6A2AA7980C00BA42B4 /* Pump_my_BikeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69CE692AA7980C00BA42B4 /* Pump_my_BikeApp.swift */; };
 		2B69CE6E2AA7981100BA42B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B69CE6D2AA7981100BA42B4 /* Assets.xcassets */; };
 		2B69CE802AA7981200BA42B4 /* Pump_my_BikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69CE7F2AA7981200BA42B4 /* Pump_my_BikeTests.swift */; };
 		2B69CE8A2AA7981200BA42B4 /* Pump_my_BikeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69CE892AA7981200BA42B4 /* Pump_my_BikeUITests.swift */; };
 		2B69CE8C2AA7981200BA42B4 /* Pump_my_BikeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69CE8B2AA7981200BA42B4 /* Pump_my_BikeUITestsLaunchTests.swift */; };
 		2B69CE9A2AA799AF00BA42B4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69CE992AA799AF00BA42B4 /* Location.swift */; };
-		2B69CE9D2AA79B6100BA42B4 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69CE9C2AA79B6100BA42B4 /* LocationsView.swift */; };
+		2B69CE9D2AA79B6100BA42B4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69CE9C2AA79B6100BA42B4 /* MainView.swift */; };
 		2B69CEA22AA7B05D00BA42B4 /* MapAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69CEA12AA7B05D00BA42B4 /* MapAPI.swift */; };
 		2B69CEA42AA7B65100BA42B4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69CEA32AA7B65100BA42B4 /* LocationManager.swift */; };
 		2B69CEA62AA7C0D300BA42B4 /* LocationMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69CEA52AA7C0D300BA42B4 /* LocationMarkerView.swift */; };
 		2BB10DA22ABE33680029CE4D /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB10DA12ABE33680029CE4D /* Rating.swift */; };
 		2BB10DA42ABE36A30029CE4D /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB10DA32ABE36A30029CE4D /* RatingView.swift */; };
 		2BB10DA62AC225BE0029CE4D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB10DA52AC225BE0029CE4D /* NetworkService.swift */; };
-		2BB10DA82AC3592F0029CE4D /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB10DA72AC3592F0029CE4D /* LocationDetailView.swift */; };
 		2BB556A42AC3710900BE7E97 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB556A32AC3710900BE7E97 /* DetailViewModel.swift */; };
-		2BB69AFC2AA7CB7D00B92C24 /* LocationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB69AFB2AA7CB7D00B92C24 /* LocationCardView.swift */; };
 		2BD18DE92ABAE80D00314669 /* AddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD18DE82ABAE80D00314669 /* AddViewModel.swift */; };
-		2BD18DEB2ABAE98400314669 /* addView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD18DEA2ABAE98400314669 /* addView.swift */; };
 		2BD18DEE2ABB2BE000314669 /* CLLocation2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD18DED2ABB2BE000314669 /* CLLocation2D.swift */; };
 		2BD18DF02ABB845200314669 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD18DEF2ABB845200314669 /* UserData.swift */; };
-		2BE28D682AB8FFD3006119B3 /* openingHourDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE28D672AB8FFD2006119B3 /* openingHourDayView.swift */; };
+		2BE28D682AB8FFD3006119B3 /* OpeningHourDayAdjuster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE28D672AB8FFD2006119B3 /* OpeningHourDayAdjuster.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +88,49 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B27B0272DEB57A200527287 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		2B27B0292DEB57F000527287 /* pmb-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pmb-logo.png"; sourceTree = "<group>"; };
+		2B2AE6FD2DEFB14200376503 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		2B2AE7092DF1E20900376503 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		2B2AE70A2DF1E20900376503 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2B2AE70B2DF1E20900376503 /* ResetPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordScreen.swift; sourceTree = "<group>"; };
+		2B2AE70C2DF1E20900376503 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		2B2AE7132DF1E27300376503 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		2B2AE7152DF1E6EA00376503 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		2B2AE7172DF1E92300376503 /* UIItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIItems.swift; sourceTree = "<group>"; };
+		2B2AE7192DF1ED1D00376503 /* SearchItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItems.swift; sourceTree = "<group>"; };
+		2B2AE71B2DF1F01C00376503 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		2B2AE71E2DF23E7900376503 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		2B2AE7202DF23E9F00376503 /* PumpCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PumpCardView.swift; sourceTree = "<group>"; };
+		2B2AE7222DF240F800376503 /* LocationCardView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCardView2.swift; sourceTree = "<group>"; };
+		2B2AE7242DF2EEB300376503 /* RouteCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCard.swift; sourceTree = "<group>"; };
+		2B2AE7262DF2F05E00376503 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		2B2AE72C2DF2FF2400376503 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		2B2AE72E2DF319F900376503 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		2B2AE7312DF3394600376503 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		2B2AE7332DF33ADF00376503 /* AddPumpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPumpView.swift; sourceTree = "<group>"; };
+		2B2AE7352DF3413000376503 /* CustomTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextEditor.swift; sourceTree = "<group>"; };
+		2B2AE7372DF345E400376503 /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
+		2B2AE73B2DF34A0300376503 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		2B2AE73D2DF35E3E00376503 /* PhotoSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelector.swift; sourceTree = "<group>"; };
+		2B2AE7402DF3612500376503 /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
+		2B2AE7422DF37B5300376503 /* PumpDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PumpDetailView.swift; sourceTree = "<group>"; };
+		2B2AE7442DF388A300376503 /* TextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBox.swift; sourceTree = "<group>"; };
+		2B2AE7462DF3930400376503 /* PictureCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCarousel.swift; sourceTree = "<group>"; };
+		2B2AE7482DF39A0000376503 /* OpeningHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHours.swift; sourceTree = "<group>"; };
+		2B5D8DD32DF3B67900E63E5A /* OperningHourConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperningHourConfigurator.swift; sourceTree = "<group>"; };
+		2B5D8DD52DF3B84B00E63E5A /* OpeningHourUploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHourUploadView.swift; sourceTree = "<group>"; };
+		2B5D8DD72DF3B88B00E63E5A /* DescriptionUploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionUploadView.swift; sourceTree = "<group>"; };
+		2B5D8DD92DF3B8C600E63E5A /* PhotoUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUploader.swift; sourceTree = "<group>"; };
+		2B5D8DDB2DF3B94D00E63E5A /* Opening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opening.swift; sourceTree = "<group>"; };
+		2B5D8DDD2DF3BB3400E63E5A /* OpeningHourAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHourAddViewModel.swift; sourceTree = "<group>"; };
+		2B5D8DDF2DF3BB8200E63E5A /* PhotoSelectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorViewModel.swift; sourceTree = "<group>"; };
+		2B5D8DE12DF46CE800E63E5A /* RatingAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingAPI.swift; sourceTree = "<group>"; };
+		2B5D8DE32DF477BB00E63E5A /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		2B5D8DE52DF4883100E63E5A /* RatingAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingAddView.swift; sourceTree = "<group>"; };
+		2B5D8DE72DF4BDE500E63E5A /* CustomLongButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLongButton.swift; sourceTree = "<group>"; };
+		2B5D8DEA2DF4E5AA00E63E5A /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		2B5D8DEC2DF4F93E00E63E5A /* VerifyEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyEmailView.swift; sourceTree = "<group>"; };
 		2B69CE662AA7980C00BA42B4 /* Pump my Bike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pump my Bike.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B69CE692AA7980C00BA42B4 /* Pump_my_BikeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pump_my_BikeApp.swift; sourceTree = "<group>"; };
 		2B69CE6D2AA7981100BA42B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,22 +140,19 @@
 		2B69CE892AA7981200BA42B4 /* Pump_my_BikeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pump_my_BikeUITests.swift; sourceTree = "<group>"; };
 		2B69CE8B2AA7981200BA42B4 /* Pump_my_BikeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pump_my_BikeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2B69CE992AA799AF00BA42B4 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		2B69CE9C2AA79B6100BA42B4 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
+		2B69CE9C2AA79B6100BA42B4 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		2B69CEA12AA7B05D00BA42B4 /* MapAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAPI.swift; sourceTree = "<group>"; };
 		2B69CEA32AA7B65100BA42B4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		2B69CEA52AA7C0D300BA42B4 /* LocationMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMarkerView.swift; sourceTree = "<group>"; };
 		2BB10DA12ABE33680029CE4D /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		2BB10DA32ABE36A30029CE4D /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		2BB10DA52AC225BE0029CE4D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		2BB10DA72AC3592F0029CE4D /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		2BB556A32AC3710900BE7E97 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
-		2BB69AFB2AA7CB7D00B92C24 /* LocationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCardView.swift; sourceTree = "<group>"; };
 		2BC428ED2AA87120007063BF /* Pump-my-Bike-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pump-my-Bike-Info.plist"; sourceTree = SOURCE_ROOT; };
 		2BD18DE82ABAE80D00314669 /* AddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewModel.swift; sourceTree = "<group>"; };
-		2BD18DEA2ABAE98400314669 /* addView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addView.swift; sourceTree = "<group>"; };
 		2BD18DED2ABB2BE000314669 /* CLLocation2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocation2D.swift; sourceTree = "<group>"; };
 		2BD18DEF2ABB845200314669 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
-		2BE28D672AB8FFD2006119B3 /* openingHourDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = openingHourDayView.swift; sourceTree = "<group>"; };
+		2BE28D672AB8FFD2006119B3 /* OpeningHourDayAdjuster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHourDayAdjuster.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +180,117 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B2AE70D2DF1E20900376503 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				2B2AE7092DF1E20900376503 /* AuthView.swift */,
+				2B2AE70A2DF1E20900376503 /* LoginView.swift */,
+				2B2AE70B2DF1E20900376503 /* ResetPasswordScreen.swift */,
+				2B2AE70C2DF1E20900376503 /* SignupView.swift */,
+				2B5D8DEC2DF4F93E00E63E5A /* VerifyEmailView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		2B2AE7122DF1E22700376503 /* UIItems */ = {
+			isa = PBXGroup;
+			children = (
+				2B2AE7132DF1E27300376503 /* SearchBar.swift */,
+				2B2AE7172DF1E92300376503 /* UIItems.swift */,
+				2B2AE7192DF1ED1D00376503 /* SearchItems.swift */,
+				2B2AE71B2DF1F01C00376503 /* Menu.swift */,
+			);
+			path = UIItems;
+			sourceTree = "<group>";
+		};
+		2B2AE71D2DF23D6C00376503 /* CardViews */ = {
+			isa = PBXGroup;
+			children = (
+				2B2AE7222DF240F800376503 /* LocationCardView2.swift */,
+				2B2AE71E2DF23E7900376503 /* CardView.swift */,
+				2B2AE7202DF23E9F00376503 /* PumpCardView.swift */,
+				2B2AE7242DF2EEB300376503 /* RouteCard.swift */,
+			);
+			path = CardViews;
+			sourceTree = "<group>";
+		};
+		2B2AE7282DF2FAFE00376503 /* Overlays */ = {
+			isa = PBXGroup;
+			children = (
+				2B2AE7332DF33ADF00376503 /* AddPumpView.swift */,
+				2BB10DA32ABE36A30029CE4D /* RatingView.swift */,
+				2B2AE72C2DF2FF2400376503 /* OverlayView.swift */,
+				2B2AE7422DF37B5300376503 /* PumpDetailView.swift */,
+				2B5D8DD52DF3B84B00E63E5A /* OpeningHourUploadView.swift */,
+			);
+			path = Overlays;
+			sourceTree = "<group>";
+		};
+		2B2AE7292DF2FB1100376503 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				2B69CEA52AA7C0D300BA42B4 /* LocationMarkerView.swift */,
+				2B2AE7262DF2F05E00376503 /* MapView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		2B2AE7302DF3392800376503 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2B5D8DEA2DF4E5AA00E63E5A /* ImagePickerView.swift */,
+				2B5D8DE92DF4C51F00E63E5A /* TextComponents */,
+				2B2AE73A2DF349EB00376503 /* Buttons */,
+				2B2AE7392DF349DC00376503 /* Input */,
+				2B2AE7462DF3930400376503 /* PictureCarousel.swift */,
+				2B2AE7482DF39A0000376503 /* OpeningHours.swift */,
+				2B5D8DD32DF3B67900E63E5A /* OperningHourConfigurator.swift */,
+				2B5D8DD72DF3B88B00E63E5A /* DescriptionUploadView.swift */,
+				2B5D8DDB2DF3B94D00E63E5A /* Opening.swift */,
+				2B5D8DE52DF4883100E63E5A /* RatingAddView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2B2AE7392DF349DC00376503 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				2B2AE7312DF3394600376503 /* CustomTextField.swift */,
+				2B2AE7352DF3413000376503 /* CustomTextEditor.swift */,
+				2B2AE7372DF345E400376503 /* CustomSecureField.swift */,
+				2BE28D672AB8FFD2006119B3 /* OpeningHourDayAdjuster.swift */,
+				2B5D8DD92DF3B8C600E63E5A /* PhotoUploader.swift */,
+				2B2AE73D2DF35E3E00376503 /* PhotoSelector.swift */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		2B2AE73A2DF349EB00376503 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				2B2AE73B2DF34A0300376503 /* CustomButton.swift */,
+				2B5D8DE72DF4BDE500E63E5A /* CustomLongButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		2B2AE73F2DF360FF00376503 /* GlobalVariables */ = {
+			isa = PBXGroup;
+			children = (
+				2B2AE7402DF3612500376503 /* CornerRadius.swift */,
+			);
+			path = GlobalVariables;
+			sourceTree = "<group>";
+		};
+		2B5D8DE92DF4C51F00E63E5A /* TextComponents */ = {
+			isa = PBXGroup;
+			children = (
+				2B2AE7442DF388A300376503 /* TextBox.swift */,
+				2B5D8DE32DF477BB00E63E5A /* Comment.swift */,
+			);
+			path = TextComponents;
+			sourceTree = "<group>";
+		};
 		2B69CE5D2AA7980C00BA42B4 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +315,9 @@
 		2B69CE682AA7980C00BA42B4 /* Pump my Bike */ = {
 			isa = PBXGroup;
 			children = (
+				2B2AE73F2DF360FF00376503 /* GlobalVariables */,
+				2B2AE7302DF3392800376503 /* Components */,
+				2B27B0272DEB57A200527287 /* Launch Screen.storyboard */,
 				2BD18DEC2ABB2BA200314669 /* Extensions */,
 				2B69CE692AA7980C00BA42B4 /* Pump_my_BikeApp.swift */,
 				2BBC32532AA8AA4F00A02C24 /* Manager */,
@@ -131,6 +325,7 @@
 				2B69CE9B2AA79B3800BA42B4 /* Views */,
 				2B69CE982AA7999700BA42B4 /* Models */,
 				2B69CE6D2AA7981100BA42B4 /* Assets.xcassets */,
+				2B27B0292DEB57F000527287 /* pmb-logo.png */,
 			);
 			path = "Pump my Bike";
 			sourceTree = "<group>";
@@ -165,13 +360,12 @@
 		2B69CE9B2AA79B3800BA42B4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2B69CE9C2AA79B6100BA42B4 /* LocationsView.swift */,
-				2B69CEA52AA7C0D300BA42B4 /* LocationMarkerView.swift */,
-				2BB69AFB2AA7CB7D00B92C24 /* LocationCardView.swift */,
-				2BE28D672AB8FFD2006119B3 /* openingHourDayView.swift */,
-				2BD18DEA2ABAE98400314669 /* addView.swift */,
-				2BB10DA32ABE36A30029CE4D /* RatingView.swift */,
-				2BB10DA72AC3592F0029CE4D /* LocationDetailView.swift */,
+				2B2AE7292DF2FB1100376503 /* Map */,
+				2B2AE7282DF2FAFE00376503 /* Overlays */,
+				2B2AE71D2DF23D6C00376503 /* CardViews */,
+				2B2AE7122DF1E22700376503 /* UIItems */,
+				2B2AE70D2DF1E20900376503 /* Authentication */,
+				2B69CE9C2AA79B6100BA42B4 /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,10 +373,12 @@
 		2B69CEA02AA7B03A00BA42B4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				2B69CEA12AA7B05D00BA42B4 /* MapAPI.swift */,
+				2B5D8DDD2DF3BB3400E63E5A /* OpeningHourAddViewModel.swift */,
 				2BD18DE82ABAE80D00314669 /* AddViewModel.swift */,
-				2BB10DA52AC225BE0029CE4D /* NetworkService.swift */,
 				2BB556A32AC3710900BE7E97 /* DetailViewModel.swift */,
+				2B5D8DDF2DF3BB8200E63E5A /* PhotoSelectorViewModel.swift */,
+				2B69CEA12AA7B05D00BA42B4 /* MapAPI.swift */,
+				2B5D8DE12DF46CE800E63E5A /* RatingAPI.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -191,6 +387,9 @@
 			isa = PBXGroup;
 			children = (
 				2B69CEA32AA7B65100BA42B4 /* LocationManager.swift */,
+				2B2AE6FD2DEFB14200376503 /* TokenManager.swift */,
+				2B2AE7152DF1E6EA00376503 /* AuthManager.swift */,
+				2BB10DA52AC225BE0029CE4D /* NetworkService.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -198,6 +397,7 @@
 		2BD18DEC2ABB2BA200314669 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2B2AE72E2DF319F900376503 /* View.swift */,
 				2BD18DED2ABB2BE000314669 /* CLLocation2D.swift */,
 			);
 			path = Extensions;
@@ -307,6 +507,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B27B02A2DEB57F000527287 /* pmb-logo.png in Resources */,
+				2B27B0282DEB57A200527287 /* Launch Screen.storyboard in Resources */,
 				2B69CE6E2AA7981100BA42B4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,22 +535,60 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BB556A42AC3710900BE7E97 /* DetailViewModel.swift in Sources */,
-				2BB69AFC2AA7CB7D00B92C24 /* LocationCardView.swift in Sources */,
+				2B2AE72D2DF2FF2400376503 /* OverlayView.swift in Sources */,
+				2B2AE7272DF2F05E00376503 /* MapView.swift in Sources */,
+				2B5D8DE22DF46CE800E63E5A /* RatingAPI.swift in Sources */,
+				2B2AE70E2DF1E20900376503 /* AuthView.swift in Sources */,
+				2B2AE70F2DF1E20900376503 /* LoginView.swift in Sources */,
+				2B2AE7102DF1E20900376503 /* ResetPasswordScreen.swift in Sources */,
+				2B5D8DE02DF3BB8200E63E5A /* PhotoSelectorViewModel.swift in Sources */,
+				2B2AE7412DF3612F00376503 /* CornerRadius.swift in Sources */,
+				2B2AE7382DF345E400376503 /* CustomSecureField.swift in Sources */,
+				2B2AE7142DF1E27300376503 /* SearchBar.swift in Sources */,
+				2B2AE7472DF3930400376503 /* PictureCarousel.swift in Sources */,
+				2B2AE71C2DF1F01C00376503 /* Menu.swift in Sources */,
+				2B2AE7112DF1E20900376503 /* SignupView.swift in Sources */,
+				2B2AE7342DF33ADF00376503 /* AddPumpView.swift in Sources */,
+				2B5D8DED2DF4F93E00E63E5A /* VerifyEmailView.swift in Sources */,
 				2BD18DE92ABAE80D00314669 /* AddViewModel.swift in Sources */,
-				2BD18DEB2ABAE98400314669 /* addView.swift in Sources */,
+				2B5D8DDC2DF3B94D00E63E5A /* Opening.swift in Sources */,
+				2B2AE7322DF3394600376503 /* CustomTextField.swift in Sources */,
+				2B2AE7452DF388A300376503 /* TextBox.swift in Sources */,
+				2B2AE7362DF3413000376503 /* CustomTextEditor.swift in Sources */,
+				2B5D8DDE2DF3BB3500E63E5A /* OpeningHourAddViewModel.swift in Sources */,
+				2B2AE72F2DF31A0200376503 /* View.swift in Sources */,
+				2B5D8DEB2DF4E5B200E63E5A /* ImagePickerView.swift in Sources */,
+				2B2AE7232DF240F800376503 /* LocationCardView2.swift in Sources */,
+				2B2AE7432DF37B5300376503 /* PumpDetailView.swift in Sources */,
+				2B2AE7182DF1E92300376503 /* UIItems.swift in Sources */,
 				2BB10DA42ABE36A30029CE4D /* RatingView.swift in Sources */,
-				2BE28D682AB8FFD3006119B3 /* openingHourDayView.swift in Sources */,
+				2BE28D682AB8FFD3006119B3 /* OpeningHourDayAdjuster.swift in Sources */,
+				2B5D8DE62DF4883100E63E5A /* RatingAddView.swift in Sources */,
 				2BD18DF02ABB845200314669 /* UserData.swift in Sources */,
-				2B69CE9D2AA79B6100BA42B4 /* LocationsView.swift in Sources */,
+				2B2AE71F2DF23E7900376503 /* CardView.swift in Sources */,
+				2B69CE9D2AA79B6100BA42B4 /* MainView.swift in Sources */,
 				2B69CEA22AA7B05D00BA42B4 /* MapAPI.swift in Sources */,
+				2B2AE7252DF2EEB300376503 /* RouteCard.swift in Sources */,
+				2B2AE73C2DF34A0300376503 /* CustomButton.swift in Sources */,
 				2B69CE9A2AA799AF00BA42B4 /* Location.swift in Sources */,
 				2BD18DEE2ABB2BE000314669 /* CLLocation2D.swift in Sources */,
-				2BB10DA82AC3592F0029CE4D /* LocationDetailView.swift in Sources */,
 				2BB10DA62AC225BE0029CE4D /* NetworkService.swift in Sources */,
+				2B5D8DE42DF477BB00E63E5A /* Comment.swift in Sources */,
 				2B69CE6A2AA7980C00BA42B4 /* Pump_my_BikeApp.swift in Sources */,
 				2B69CEA42AA7B65100BA42B4 /* LocationManager.swift in Sources */,
+				2B5D8DDA2DF3B8C600E63E5A /* PhotoUploader.swift in Sources */,
+				2B5D8DD42DF3B67900E63E5A /* OperningHourConfigurator.swift in Sources */,
+				2B2AE73E2DF35E3E00376503 /* PhotoSelector.swift in Sources */,
+				2B2AE6FE2DEFB14200376503 /* TokenManager.swift in Sources */,
 				2B69CEA62AA7C0D300BA42B4 /* LocationMarkerView.swift in Sources */,
+				2B5D8DE82DF4BDE500E63E5A /* CustomLongButton.swift in Sources */,
+				2B5D8DD62DF3B84B00E63E5A /* OpeningHourUploadView.swift in Sources */,
 				2BB10DA22ABE33680029CE4D /* Rating.swift in Sources */,
+				2B2AE7212DF23E9F00376503 /* PumpCardView.swift in Sources */,
+				2B2AE71A2DF1ED1D00376503 /* SearchItems.swift in Sources */,
+				2B2AE7492DF39A0000376503 /* OpeningHours.swift in Sources */,
+				2B5D8DD82DF3B88B00E63E5A /* DescriptionUploadView.swift in Sources */,
+				2B2AE7162DF1E6EA00376503 /* AuthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

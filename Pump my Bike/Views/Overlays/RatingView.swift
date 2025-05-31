@@ -9,6 +9,8 @@ import SwiftUI
 
 struct RatingView: View {
     
+    @AppStorage("loggedIn") private var loggedIn = false
+    
     @State var rating: Int = 0
     @State var comment: String = ""
     @State var locationId: Int
@@ -68,10 +70,16 @@ struct RatingView: View {
                         .padding(5)
                 })
                 Button(action: {
-                    let rat = Rating(rating: rating, comment: comment, locationId: locationId)
-                    mapAPI.postRating(rating: rat)
-                    showRatingView()
-                    presentationMode.wrappedValue.dismiss()
+                    Task{
+                        let rat = Rating(rating: rating, comment: comment, locationId: locationId)
+                        //let (succ , err ) = try await AuthManager.shared.refreshSessionIfTokenExpired()
+                        //if(!succ){
+                        //    return
+                        //}
+                        //await mapAPI.postRating(rating: rat)
+                        showRatingView()
+                        presentationMode.wrappedValue.dismiss()
+                    }
                 }, label: {
                     Text("comment")
                         .foregroundColor(.white)

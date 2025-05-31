@@ -11,7 +11,6 @@ import PhotosUI
 import _PhotosUI_SwiftUI
 import _MapKit_SwiftUI
 
-
 @MainActor
 class MapAPI: ObservableObject {
     
@@ -21,7 +20,6 @@ class MapAPI: ObservableObject {
         }
     }
     @Published var cameraPosition: MapCameraPosition
-    
     
     @Published var showCardView: Bool = false
     @Published var pumps: [PumpData] = []
@@ -37,14 +35,10 @@ class MapAPI: ObservableObject {
     @Published var showRoute: Bool = false
     @Published var route: MKRoute?
     
-    
-
     let manager = LocationManager()
     
     let userData = UserData()
-    
     let networkService: NetworkService
-    
     var filenames: [String]? = nil
     
     @Published var thumbnail: UIImage?
@@ -61,8 +55,6 @@ class MapAPI: ObservableObject {
             self.cameraPosition = .region(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 52.555305, longitude: 13.464911), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)))
 
         }
-        
-        
         currentLocation = manager.location
         
     }
@@ -149,18 +141,7 @@ class MapAPI: ObservableObject {
         }
     }
     
-    func postRating(rating: Rating){
-        guard let url = URL(string:"\(networkService.SERVER_IP)/rating?userid=\(userData.userId!)" )else{
-            return
-        }
-        guard let data = try? JSONEncoder().encode(rating) else {
-            return
-        }
-        let request = networkService.generateRequest(httpBody: data, url: url, headerValues: ["application/json":"Content-Type"])
-        networkService.postRequest(request: request)
-    }
-    
-    func uploadNewPump(pumpData: PumpData, image: UIImage? = nil) async{
+    func uploadNewPump(pumpData: PumpData, image: UIImage? = nil) async throws{
         let url_string = "\(networkService.SERVER_IP)/locations"
         
         guard let url = URL(string: url_string) else {
@@ -180,33 +161,40 @@ class MapAPI: ObservableObject {
             return
         }
         
-        let request = networkService.generateRequest(httpBody: jsonData, url: url, headerValues: ["application/json":"Content-Type"])
+        var request = networkService.generateRequest(httpBody: jsonData, url: url, headerValues: ["application/json":"Content-Type"])
+        
+        guard let cookieHeader = networkService.getTokenCookieHeader() else {
+            TokenManager.shared.clearTokens()
+            return
+        }
+        
+        request.setValue(cookieHeader, forHTTPHeaderField: "Cookie")
+        request.setValue("session", forHTTPHeaderField: "rid")
+        request.httpMethod = "POST"
 
-        networkService.postRequest(request: request) { data in
-            if let pumpData = try? JSONDecoder().decode(PumpData.self, from: data) {
-                DispatchQueue.main.async {
-                    self.pumps.append(pumpData)
-                    let newPin = LocationPin(pumpData: pumpData)
-                    self.pins.insert(newPin, at: 0)
-                }
-            }
-            guard let image = image else {
-                return
-            }
-            
-            guard let id = try? JSONDecoder().decode(ID.self, from: data) else {
-                print(data)
-                return
-            }
+        let (data, res) = try await networkService.authorizedRequest(request: request)
+        
+        if let pumpData = try? JSONDecoder().decode(PumpData.self, from: data) {
             DispatchQueue.main.async {
-                self.uploadImage(image: image, pumpId: id.id)
+                self.pumps.append(pumpData)
+                let newPin = LocationPin(pumpData: pumpData)
+                self.pins.insert(newPin, at: 0)
             }
         }
+        guard let image = image else {
+            return
+        }
+        
+        guard let id = try? JSONDecoder().decode(ID.self, from: data) else {
+            return
+        }
 
+        try await self.uploadImage(image: image, pumpId: id.id)
+        
         
     }
     
-    func uploadImage(image: UIImage, pumpId: Int){
+    func uploadImage(image: UIImage, pumpId: Int) async throws{
         let boundary: String = "Boundary-\(UUID().uuidString)"
         let urlString = "\(networkService.SERVER_IP)/images?id=\(pumpId)"
         guard let url = URL(string: urlString) else {
@@ -215,7 +203,20 @@ class MapAPI: ObservableObject {
         }
         let data = multipartFormDataBody(boundary, "gjhfg", image, pumpID: pumpId)
         let request = networkService.generateRequest(httpBody: data, url: url, headerValues: ["multipart/form-data; boundary=\(boundary)":"Content-Type"])
-        networkService.postRequest(request: request)
+        let (httpData, res) = try await networkService.postRequest(request: request)
+
+        guard let filename = String(data: httpData, encoding: .utf8) else {
+            return
+        }
+        
+        guard var pumpdata = self.pumps.first(where: { $0.id == pumpId }) else {
+            return
+        }
+            
+        pumpdata.thumbnail = filename
+        self.pumps.removeAll(where: { $0.id == pumpId })
+        self.pumps.append(pumpdata)
+            
     }
     
     private func multipartFormDataBody(_ boundary: String, _ fromName: String, _ image: UIImage, pumpID: Int) -> Data{
@@ -234,7 +235,6 @@ class MapAPI: ObservableObject {
         
         body.append("--\(boundary)--\(lineBreak)")
 
-        
         return body
     }
     
@@ -255,7 +255,6 @@ class MapAPI: ObservableObject {
                     continuation.resume(throwing: err)
                     return
                 }
-                
                 continuation.resume(returning: pump)
             }
         }
@@ -302,21 +301,14 @@ class MapAPI: ObservableObject {
             self.pins.removeAll(where: {$0.type == 1})
             for pump in self.pumps{
                 let newPin = LocationPin(pumpData: pump)
-                //print(pump.thumbnail)
                 self.pins.insert(newPin, at: 0)
             }
         }
-            
-
-        
     }
 
-    
     func updateRegion(coordinates: CLLocationCoordinate2D, span: MKCoordinateSpan?){
         self.region = MKCoordinateRegion(center: coordinates, span: span ?? self.region.span)
     }
-    
-  
     
     func insertPin(coordinates: CLLocationCoordinate2D){
         let pin = LocationPin(name: "Location", coodinates: coordinates, type: 0, locationId: nil)
@@ -324,9 +316,7 @@ class MapAPI: ObservableObject {
         self.currentPin = pin
         self.currentLocation = coordinates
     }
-  
-}
-
+  }
 
 class ErrorHandler{
     @Published var errorMessage: ErrorMessage?
@@ -347,11 +337,9 @@ class ErrorHandler{
         self.errorMessage = ErrorMessage(name: name, massage: message)
         self.showError = true
     }
-     
 }
 
 struct ErrorMessage{
     var name: String
     var massage: String
 }
-
