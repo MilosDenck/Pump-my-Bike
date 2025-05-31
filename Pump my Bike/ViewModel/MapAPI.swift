@@ -202,7 +202,6 @@ class MapAPI: ObservableObject {
                 self.uploadImage(image: image, pumpId: id.id)
             }
         }
-
         
     }
     
