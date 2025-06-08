@@ -181,6 +181,7 @@ class MapAPI: ObservableObject {
                 self.pins.insert(newPin, at: 0)
             }
         }
+
         guard let image = image else {
             return
         }
@@ -190,8 +191,7 @@ class MapAPI: ObservableObject {
         }
 
         try await self.uploadImage(image: image, pumpId: id.id)
-        
-        
+
     }
     
     func uploadImage(image: UIImage, pumpId: Int) async throws{
