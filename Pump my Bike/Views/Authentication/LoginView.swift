@@ -53,17 +53,12 @@ struct LoginView: View {
                             return
                         }
                         Task{
-                            do {
-                                let (success, errorMsg) = try await AuthManager.shared.login(email: email, password: password)
-                                if success {
-                                    authScreen = .none
-                                    showErrorMessage = false
-                                } else {
-                                    errorMessage = errorMsg
-                                    showErrorMessage = true
-                                }
-                            } catch {
-                                print(error)
+                            let (success, errorMsg) = try await AuthManager.shared.login(email: email, password: password)
+                            if success {
+                                authScreen = .none
+                            } else {
+                                errorMessage = errorMsg
+                                handler.showError(message: "Login Error", title: errorMsg)
                             }
                         }
                     })
@@ -79,14 +74,6 @@ struct LoginView: View {
         }
             .foregroundColor(.black)
             .background(Color.white)
-            .alert("Login Error", isPresented: $showErrorMessage, actions: {
-                        
-            Button("Cancel", role: .cancel) {
-                showErrorMessage = false
-            }
-        }, message: {
-            Text(errorMessage)
-        })
     }
     
     func isValidEmail(_ email: String) -> Bool {

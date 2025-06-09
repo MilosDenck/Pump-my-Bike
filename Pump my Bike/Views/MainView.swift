@@ -86,10 +86,11 @@ struct MainView: View {
     func initApp() async throws{
         let (sessionValid, error) = try await AuthManager.shared.refreshSession()
         if (!sessionValid){
+            handler.showError(message: error, title: "session expired")
             TokenManager.shared.clearTokens()
             authScreen = .loginScreen
         }
-        await mapAPI.loadData()
+        try await mapAPI.loadData()
     }
 }
 

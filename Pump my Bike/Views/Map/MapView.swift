@@ -46,9 +46,6 @@ struct MapView: View {
                                     mapAPI.updateRegion(coordinates: pin.coodinates, span: visibleRegion?.span)
                                     mapAPI.currentPin = pin
                                     mapAPI.dismissRoute()
-                                    /*if(pin.type == 1){
-                                     mapAPI.getFilenames(id: pin.locationId!)
-                                     }*/
                                     showCardView = true
                                 }
                             }

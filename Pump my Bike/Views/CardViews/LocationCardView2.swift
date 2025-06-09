@@ -34,7 +34,7 @@ struct LocationCardView2: View {
                 CustomLongButton(title: "Search near", action: {
                     Task{
                         currentLocation = mapAPI.pins.first(where: {$0.type == 0})!.coodinates
-                        await mapAPI.updatePumps(coordinates: currentLocation ?? CLLocationCoordinate2D(latitude: 0, longitude: 0))
+                        try await mapAPI.updatePumps(coordinates: currentLocation ?? CLLocationCoordinate2D(latitude: 0, longitude: 0))
                     }
                 })
                 .padding(.horizontal, 5)

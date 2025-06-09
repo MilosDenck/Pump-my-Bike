@@ -56,6 +56,8 @@ struct VerifyEmailView: View {
                         let succ = try await AuthManager.shared.verifySession()
                         if(succ){
                             UserDefaults.standard.removeObject(forKey: "verified")
+                        }else {
+                            handler.showError(message: "Mail not verified", title: "Error")
                         }
                     }
                 })

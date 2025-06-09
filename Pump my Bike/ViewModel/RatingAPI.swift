@@ -66,6 +66,8 @@ class RatingAPI: ObservableObject {
         
         let (recData, res) = try await networkService.authorizedRequest(request: request)
         
+        print(res.statusCode)
+        
         guard let avgrating = String(data: recData, encoding: .utf8) else {
             return nil
         }

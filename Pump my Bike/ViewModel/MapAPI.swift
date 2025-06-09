@@ -25,7 +25,6 @@ class MapAPI: ObservableObject {
     @Published var pumps: [PumpData] = []
     @Published var pins: [LocationPin] = []
     @Published var currentPin: LocationPin? = nil
-    @Published var errorHandler: ErrorHandler
     
     @Published var currentLocation: CLLocationCoordinate2D?
     
@@ -44,7 +43,6 @@ class MapAPI: ObservableObject {
     @Published var thumbnail: UIImage?
     
     init() {
-        self.errorHandler = ErrorHandler()
         self.networkService = NetworkService()
         if let location = manager.location {
             self.region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
@@ -59,8 +57,8 @@ class MapAPI: ObservableObject {
         
     }
     
-    func loadData() async {
-            await updatePumps(coordinates: region.center)
+    func loadData() async throws{
+        try await updatePumps(coordinates: region.center)
     }
     
     func searchPlace(name: String){
@@ -114,9 +112,6 @@ class MapAPI: ObservableObject {
                             self.currentLocation = coordinates
                         }
                     }
-                    else {
-                        self.errorHandler.triggerError(name: "Error", message: error!.localizedDescription)
-                    }
                 })
     }
     
@@ -141,12 +136,12 @@ class MapAPI: ObservableObject {
         }
     }
     
-    func uploadNewPump(pumpData: PumpData, image: UIImage? = nil) async throws{
+    func uploadNewPump(pumpData: PumpData, image: UIImage? = nil) async throws -> (Bool, String?){
         let url_string = "\(networkService.SERVER_IP)/locations"
         
         guard let url = URL(string: url_string) else {
             print("invalid URL")
-            return
+            return (false, "invalid api url")
         }
         
         var jsonData:Data
@@ -158,14 +153,14 @@ class MapAPI: ObservableObject {
             jsonData = try encoder.encode(pumpData)
         }catch{
             print("encode gone wrong")
-            return
+            return (false, "an error occured")
         }
         
         var request = networkService.generateRequest(httpBody: jsonData, url: url, headerValues: ["application/json":"Content-Type"])
         
         guard let cookieHeader = networkService.getTokenCookieHeader() else {
             TokenManager.shared.clearTokens()
-            return
+            return (false, "an error occured")
         }
         
         request.setValue(cookieHeader, forHTTPHeaderField: "Cookie")
@@ -175,47 +170,58 @@ class MapAPI: ObservableObject {
         let (data, res) = try await networkService.authorizedRequest(request: request)
         
         if let pumpData = try? JSONDecoder().decode(PumpData.self, from: data) {
-            DispatchQueue.main.async {
-                self.pumps.append(pumpData)
-                let newPin = LocationPin(pumpData: pumpData)
-                self.pins.insert(newPin, at: 0)
-            }
+
+            self.pumps.append(pumpData)
+            let newPin = LocationPin(pumpData: pumpData)
+            self.pins.insert(newPin, at: 0)
+            self.currentPin = newPin
+            self.dismissRoute()
+        }
+        
+        guard (200...299).contains(res.statusCode) else {
+            return (false, "an error occured")
         }
 
         guard let image = image else {
-            return
+            return (true, nil)
         }
         
         guard let id = try? JSONDecoder().decode(ID.self, from: data) else {
-            return
+            return (false ,"an error occured")
         }
 
         try await self.uploadImage(image: image, pumpId: id.id)
-
+        return (true, nil)
     }
     
-    func uploadImage(image: UIImage, pumpId: Int) async throws{
+    func uploadImage(image: UIImage, pumpId: Int) async throws -> (Bool, String?){
         let boundary: String = "Boundary-\(UUID().uuidString)"
         let urlString = "\(networkService.SERVER_IP)/images?id=\(pumpId)"
         guard let url = URL(string: urlString) else {
             print("invalid URL")
-            return
+            return (false, "invalid api url")
         }
         let data = multipartFormDataBody(boundary, "gjhfg", image, pumpID: pumpId)
         let request = networkService.generateRequest(httpBody: data, url: url, headerValues: ["multipart/form-data; boundary=\(boundary)":"Content-Type"])
         let (httpData, res) = try await networkService.postRequest(request: request)
+        
+        guard (200..<300).contains(res.statusCode) else {
+            return (false, "an error occured")
+        }
 
         guard let filename = String(data: httpData, encoding: .utf8) else {
-            return
+            return (false, "an error occured")
         }
         
         guard var pumpdata = self.pumps.first(where: { $0.id == pumpId }) else {
-            return
+            return (false, "an error occured")
         }
             
         pumpdata.thumbnail = filename
         self.pumps.removeAll(where: { $0.id == pumpId })
         self.pumps.append(pumpdata)
+        
+        return (true, nil)
             
     }
     
@@ -244,7 +250,6 @@ class MapAPI: ObservableObject {
         return try await withCheckedThrowingContinuation { continuation in
             networkService.getRequest(url_string: url_string) { data, error in
                 if let error = error {
-                    self.errorHandler.triggerError(name: "Error", message: error.localizedDescription)
                     continuation.resume(throwing: error)
                     return
                 }
@@ -259,51 +264,30 @@ class MapAPI: ObservableObject {
             }
         }
     }
-
-    /*
-    func getFilenames(id: Int){
-        self.filenames = nil
-        let url_string = "\(networkService.SERVER_IP)/images?id=\(id)"
-        networkService.getRequest(url_string: url_string){ data , error in
-            if let error = error{
-                self.errorHandler.triggerError(name: "Error", message: error.localizedDescription)
-                return
-            }
-            guard let data = data else{
-                return
-            }
-            guard let files = try? JSONDecoder().decode([String].self, from: data) else {
-                print("decode gone wrong")
-                return
-            }
-            self.filenames = files
-        }
-    }*/
     
-    func updatePumps(coordinates: CLLocationCoordinate2D) async {
+    func updatePumps(coordinates: CLLocationCoordinate2D) async throws -> (Bool, String?) {
         let url_string = "\(networkService.SERVER_IP)/locations?lat=\(coordinates.latitude)&lon=\(coordinates.longitude)&maxdist=20"
         
-        networkService.getRequest(url_string: url_string){ data, error in
-            if let error = error{
-                self.errorHandler.triggerError(name: "Error", message: error.localizedDescription)
-                return
-            }
-            guard let data = data else{
-                return
-            }
-            guard let pumpData = try? JSONDecoder().decode(PumpDatas.self, from: data) else {
-
-                return
-            }
-            
-            self.pumps.removeAll()
-            self.pumps = pumpData
-            self.pins.removeAll(where: {$0.type == 1})
-            for pump in self.pumps{
-                let newPin = LocationPin(pumpData: pump)
-                self.pins.insert(newPin, at: 0)
-            }
+        let (data, res) = try await networkService.getRequest(url_string: url_string)
+        
+        guard (200..<300).contains(res.statusCode) else {
+            return (false, "an error occured")
         }
+      
+        guard let pumpData = try? JSONDecoder().decode(PumpDatas.self, from: data) else {
+            return (false, "an error occured")
+        }
+        
+        self.pumps.removeAll()
+        self.pumps = pumpData
+        self.pins.removeAll(where: {$0.type == 1})
+        for pump in self.pumps{
+            let newPin = LocationPin(pumpData: pump)
+            self.pins.insert(newPin, at: 0)
+        }
+        
+        return (true, nil)
+        
     }
 
     func updateRegion(coordinates: CLLocationCoordinate2D, span: MKCoordinateSpan?){

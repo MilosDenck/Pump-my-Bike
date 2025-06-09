@@ -104,22 +104,9 @@ struct AddPumpView: View {
 
     func uploadPump() async throws {
         guard let loc = mapAPI.currentLocation else {
-            mapAPI.errorHandler.triggerError(name: "Error", message: "Location not found")
             return
         }
         var newPump = addViewModel.getData(name: name, location: loc)
-        guard let accessTokenExpires = TokenManager.shared.accessTokenExpires else {
-            return
-        }
-        if(accessTokenExpires < Date()){
-            
-            let (succ, _) = try await AuthManager.shared.refreshSession()
-            if !succ{
-                TokenManager.shared.clearTokens()
-                return
-            }
-        }
-        print(openingHourViewModel.isActive)
         if(openingHourViewModel.isActive){
             let openingHours = OpeningHours(alwaysOpen: openingHourViewModel.alwaysOpen, monday: openingHourViewModel.monday, tuesday: openingHourViewModel.tuesday, wednesday: openingHourViewModel.wednesday, thursday: openingHourViewModel.thursday, friday: openingHourViewModel.friday, saturday: openingHourViewModel.saturday, sunday: openingHourViewModel.sunday)
             newPump.openingHours = openingHours
