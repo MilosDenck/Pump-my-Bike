@@ -25,13 +25,20 @@ struct Menu: View {
                 })
                 .padding(10)
             }else{
-                Button("Login") {
+                Button("Sign Up", systemImage: "person.crop.circle.fill.badge.plus") {
+                    authScreen = .signupScreen
+                }
+                    .padding(10)
+                Button("Login", systemImage: "arrow.turn.down.right") {
                     authScreen = .loginScreen
                 }
+                    .padding(10)
             }
         }
         .padding(10)
-        .border(.black)
+        .background(RoundedRectangle(cornerRadius: CornerRadius.medium).stroke(.black, lineWidth: 2).fill(.white))
+        
+        //.border(.black)
         
         
     }
