@@ -16,6 +16,8 @@ struct LoginView: View {
     
     @Binding var authScreen: AuthScreen
     
+    @EnvironmentObject var handler: ErrorHandler2
+    
     var body: some View {
         VStack{
             Spacer()
@@ -46,6 +48,10 @@ struct LoginView: View {
                     .foregroundStyle(.blue)
                     Spacer()
                     CustomButton(title: "Login", action: {
+                        guard isValidEmail(email) else{
+                            handler.showError(message: "Invalid email format", title: "Sign Up Error")
+                            return
+                        }
                         Task{
                             do {
                                 let (success, errorMsg) = try await AuthManager.shared.login(email: email, password: password)
@@ -81,6 +87,11 @@ struct LoginView: View {
         }, message: {
             Text(errorMessage)
         })
+    }
+    
+    func isValidEmail(_ email: String) -> Bool {
+        let pattern = #"^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"#
+        return email.range(of: pattern, options: .regularExpression) != nil
     }
 }
 

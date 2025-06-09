@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct VerifyEmailView: View {
+    
+    @EnvironmentObject var handler: ErrorHandler2
     var body: some View {
         VStack{
             HStack{
@@ -64,6 +66,8 @@ struct VerifyEmailView: View {
             Spacer()
         }.background(.white)
     }
+    
+    
 }
 
 #Preview {

@@ -24,6 +24,8 @@ struct AddPumpView: View {
     @State var showSelection: Bool = false
     @State var showPicker: Bool = false
     @State var type: UIImagePickerController.SourceType = .camera
+    
+    @EnvironmentObject var handler: ErrorHandler2
 
     
     let manager = LocationManager()

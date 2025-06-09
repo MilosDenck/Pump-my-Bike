@@ -67,12 +67,12 @@ struct OverlayView: View {
                     .padding(.top, 12)
                 }
                 if overlayView == .addView {
-                    AddPumpView(overlayView: $overlayView, authScreen: $authScreen, name: mapAPI.currentPin?.name ?? "").environmentObject(mapAPI)
+                    AddPumpView(overlayView: $overlayView, authScreen: $authScreen, name: mapAPI.currentPin?.name ?? "")
                 }
                 if overlayView == .pumpDetails {
                     if let pump = mapAPI.pumps.first(where: { $0.id == mapAPI.currentPin?.locationId }){
                         let detailViewModel = DetailViewModel(pump: pump)
-                        PumpDetailView(pump: pump, ldvm: detailViewModel, overlayView: $overlayView, authScreen: $authScreen).environmentObject(mapAPI)
+                        PumpDetailView(pump: pump, ldvm: detailViewModel, overlayView: $overlayView, authScreen: $authScreen)
                     }
                     
                 }

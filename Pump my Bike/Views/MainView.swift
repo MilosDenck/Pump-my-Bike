@@ -13,7 +13,7 @@ import PhotosUI
 
 struct MainView: View {
     
-    @StateObject private var mapAPI = MapAPI()
+    
 
     @ObservedObject private var locationManager = LocationManager()
         
@@ -31,33 +31,36 @@ struct MainView: View {
     
     @State private var authScreen: AuthScreen = .none
     @AppStorage("verified") var verfied: Bool=true
+    
+    @EnvironmentObject var mapAPI: MapAPI
+    @EnvironmentObject var handler: ErrorHandler2
 
     var body: some View {
         NavigationStack{
             ZStack{
-                MapView(showRatingView: $showRatingView, showCardView: $showCardView).environmentObject(mapAPI)
+                MapView(showRatingView: $showRatingView, showCardView: $showCardView)
                 if(showCardView){
                     CardView(overlayView: $overlayView, currentLocation: $currentLocation, showRatingView: {
                         showRatingView = true
                         showCardView = false
-                    }, getRoute: {showCardView = false}).environmentObject(mapAPI)
+                    }, getRoute: {showCardView = false})
                 }
                 if(mapAPI.showRoute){
-                    RouteCard().environmentObject(mapAPI)
+                    RouteCard()
                 }
-                UIItems(authScreen: $authScreen).environmentObject(mapAPI)
+                UIItems(authScreen: $authScreen)
                 if (showRatingView ){
                     if let locID = mapAPI.currentPin?.locationId{
                         RatingView(locationId: locID, showRatingView: {
                             showRatingView.toggle()
                             showCardView.toggle()
-                        }).environmentObject(mapAPI)
+                        })
                             .padding(10)
                             .background(RoundedRectangle(cornerSize: CGSize(width: 5, height: 5)).fill(.ultraThinMaterial))
                             .padding(10)
                     }
                 }
-                OverlayView(overlayView: $overlayView, authScreen: $authScreen).environmentObject(mapAPI)
+                OverlayView(overlayView: $overlayView, authScreen: $authScreen)
                 if (authScreen != .none){
                     AuthView(authScreen: $authScreen)
                 }
@@ -66,8 +69,8 @@ struct MainView: View {
                 }
                 
             }
-            .alert(isPresented: $mapAPI.errorHandler.showError) {
-                Alert(title: Text(mapAPI.errorHandler.errorMessage?.name ?? ""), message: Text(mapAPI.errorHandler.errorMessage?.massage ?? ""), dismissButton: .default(Text("OK")))
+            .alert(isPresented: $handler.isShowingError) {
+                Alert(title: Text(handler.errorTitle ?? ""), message: Text(handler.errorMessage ?? ""), dismissButton: .default(Text("OK")))
                     }
             .navigationBarHidden(true)
             .onAppear {

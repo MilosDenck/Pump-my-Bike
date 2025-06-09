@@ -15,6 +15,8 @@ struct ResetPasswordScreen: View {
         
     @Binding var authScreen: AuthScreen
     
+    @EnvironmentObject var handler: ErrorHandler2
+    
     var body: some View {
         VStack{
             Spacer()
@@ -27,10 +29,13 @@ struct ResetPasswordScreen: View {
                     Spacer()
                     CustomButton(title: "Send"){
                         Task{
+                            guard isValidEmail(email) else{
+                                handler.showError(message: "Invalid email format", title: "Sign Up Error")
+                                return
+                            }
                             let (succ, error) = try await AuthManager.shared.resetPassword(email: email)
                             if !succ{
-                                errorMessage = error
-                                showErrorMessage = true
+                                handler.showError(message: error, title: "Error")
                                 return
                             }
                         }
@@ -51,14 +56,9 @@ struct ResetPasswordScreen: View {
         }
             .foregroundColor(.black)
             .background(Color.white)
-            .alert("Error", isPresented: $showErrorMessage, actions: {
-                        
-            Button("Cancel", role: .cancel) {
-                showErrorMessage = false
-            }
-                
-        }, message: {
-            Text(errorMessage)
-        })
+    }
+    func isValidEmail(_ email: String) -> Bool {
+        let pattern = #"^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"#
+        return email.range(of: pattern, options: .regularExpression) != nil
     }
 }

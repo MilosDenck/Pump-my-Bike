@@ -18,6 +18,8 @@ struct SignupView: View {
         
     @Binding var authScreen: AuthScreen
     
+    @EnvironmentObject var handler: ErrorHandler2
+    
     var body: some View {
         VStack{
             Spacer()
@@ -36,35 +38,33 @@ struct SignupView: View {
                     CustomButton(title: "sign up", action: {
                         Task{
                             guard password == passwordValidation else {
-                                showErrorMessage = true
-                                errorMessage = "Passwords do not match"
+                                handler.showError(message: "Passwords do not match", title: "Sign Up Error")
                                 return
                             }
                             guard isValidEmail(email) else{
-                                showErrorMessage = true
-                                errorMessage = "Invalid email format"
+                                handler.showError(message: "Invalid email format", title: "Sign Up Error")
                                 return
                             }
                             guard isValidUsername(username) else{
-                                showErrorMessage = true
-                                errorMessage = "Invalid username format"
+                                handler.showError(message: "Username is not valid", title: "Sign Up Error")
                                 return
                             }
                             let (succ, error) = try await AuthManager.shared.singUp(email: email, password: password, username: username)
                             guard succ else {
-                                showErrorMessage = true
-                                errorMessage = error
+                                handler.showError(message: error, title: "Sign Up Error")
                                 TokenManager.shared.clearTokens()
                                 return
                             }
                             let succ2 = try await AuthManager.shared.verifyMail()
                             guard succ2 else {
                                 TokenManager.shared.clearTokens()
+                                authScreen = AuthScreen.loginScreen
                                 return
                             }
                             let succ3 = try await AuthManager.shared.verifyMailToken()
                             guard succ3 else {
                                 TokenManager.shared.clearTokens()
+                                authScreen = AuthScreen.loginScreen
                                 return
                             }
                             authScreen = AuthScreen.loginScreen
@@ -84,15 +84,6 @@ struct SignupView: View {
         }
             .foregroundColor(.black)
             .background(Color.white)
-            .alert("Registration Error", isPresented: $showErrorMessage, actions: {
-                        
-            Button("Cancel", role: .cancel) {
-                showErrorMessage = false
-            }
-                
-        }, message: {
-            Text(errorMessage)
-        })
     }
     
     func isValidEmail(_ email: String) -> Bool {
