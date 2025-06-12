@@ -1,6 +1,7 @@
-![App Demo](assets/mockup.gif)
-
 # Pump My Bike (iOS App) 🚲
+
+<img src="assets/mockup.gif)" alt="Demo" width="450">
+
 ## Overview
 
 Pump My Bike is a native iOS application developed with Swift and SwiftUI that helps cyclists easily locate and rate public bike pumps. This app provides a user-friendly interface to find nearby pumps, view their details, and contribute to the community by leaving reviews. It integrates seamlessly with a custom Node.js backend to manage pump data and user interactions.
