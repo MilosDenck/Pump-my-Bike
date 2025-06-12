@@ -1,3 +1,5 @@
+![App Demo](assets/mockup.gif)
+
 # Pump My Bike (iOS App) 🚲
 ## Overview
 

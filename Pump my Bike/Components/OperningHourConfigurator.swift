@@ -26,9 +26,15 @@ struct OperningHourConfigurator: View {
                             Spacer()
                             DatePicker("closing:" ,selection: $closingTime, displayedComponents: .hourAndMinute)
                                 .onChange(of: closingTime){
+                                    if(closingTime < openingTime){
+                                        return
+                                    }
                                     openingHourViewModel.setOpeningHour(openingHour: OpeningHour(opening: Time(date: openingTime), closing: Time(date: closingTime)))
                                 }
                                 .onChange(of: openingTime){
+                                    if(closingTime < openingTime){
+                                        return
+                                    }
                                     openingHourViewModel.setOpeningHour(openingHour: OpeningHour(opening: Time(date: openingTime), closing: Time(date: closingTime)))
                                 }
                         }

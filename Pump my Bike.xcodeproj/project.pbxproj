@@ -50,6 +50,9 @@
 		2B5D8DE82DF4BDE500E63E5A /* CustomLongButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D8DE72DF4BDE500E63E5A /* CustomLongButton.swift */; };
 		2B5D8DEB2DF4E5B200E63E5A /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D8DEA2DF4E5AA00E63E5A /* ImagePickerView.swift */; };
 		2B5D8DED2DF4F93E00E63E5A /* VerifyEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D8DEC2DF4F93E00E63E5A /* VerifyEmailView.swift */; };
+		2B5D8DF12DF70B3100E63E5A /* ErrorHandler2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D8DF02DF70B3100E63E5A /* ErrorHandler2.swift */; };
+		2B5D8DF22DF70D8F00E63E5A /* Pump_my_BikeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69CE692AA7980C00BA42B4 /* Pump_my_BikeApp.swift */; };
+		2B5D8DF32DF70D8F00E63E5A /* Pump_my_BikeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69CE692AA7980C00BA42B4 /* Pump_my_BikeApp.swift */; };
 		2B69CE6A2AA7980C00BA42B4 /* Pump_my_BikeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69CE692AA7980C00BA42B4 /* Pump_my_BikeApp.swift */; };
 		2B69CE6E2AA7981100BA42B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B69CE6D2AA7981100BA42B4 /* Assets.xcassets */; };
 		2B69CE802AA7981200BA42B4 /* Pump_my_BikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69CE7F2AA7981200BA42B4 /* Pump_my_BikeTests.swift */; };
@@ -131,6 +134,7 @@
 		2B5D8DE72DF4BDE500E63E5A /* CustomLongButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLongButton.swift; sourceTree = "<group>"; };
 		2B5D8DEA2DF4E5AA00E63E5A /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		2B5D8DEC2DF4F93E00E63E5A /* VerifyEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyEmailView.swift; sourceTree = "<group>"; };
+		2B5D8DF02DF70B3100E63E5A /* ErrorHandler2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler2.swift; sourceTree = "<group>"; };
 		2B69CE662AA7980C00BA42B4 /* Pump my Bike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pump my Bike.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B69CE692AA7980C00BA42B4 /* Pump_my_BikeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pump_my_BikeApp.swift; sourceTree = "<group>"; };
 		2B69CE6D2AA7981100BA42B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -390,6 +394,7 @@
 				2B2AE6FD2DEFB14200376503 /* TokenManager.swift */,
 				2B2AE7152DF1E6EA00376503 /* AuthManager.swift */,
 				2BB10DA52AC225BE0029CE4D /* NetworkService.swift */,
+				2B5D8DF02DF70B3100E63E5A /* ErrorHandler2.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -582,6 +587,7 @@
 				2B2AE6FE2DEFB14200376503 /* TokenManager.swift in Sources */,
 				2B69CEA62AA7C0D300BA42B4 /* LocationMarkerView.swift in Sources */,
 				2B5D8DE82DF4BDE500E63E5A /* CustomLongButton.swift in Sources */,
+				2B5D8DF12DF70B3100E63E5A /* ErrorHandler2.swift in Sources */,
 				2B5D8DD62DF3B84B00E63E5A /* OpeningHourUploadView.swift in Sources */,
 				2BB10DA22ABE33680029CE4D /* Rating.swift in Sources */,
 				2B2AE7212DF23E9F00376503 /* PumpCardView.swift in Sources */,
@@ -596,6 +602,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B5D8DF22DF70D8F00E63E5A /* Pump_my_BikeApp.swift in Sources */,
 				2B69CE802AA7981200BA42B4 /* Pump_my_BikeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -605,6 +612,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B69CE8A2AA7981200BA42B4 /* Pump_my_BikeUITests.swift in Sources */,
+				2B5D8DF32DF70D8F00E63E5A /* Pump_my_BikeApp.swift in Sources */,
 				2B69CE8C2AA7981200BA42B4 /* Pump_my_BikeUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
