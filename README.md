@@ -1,6 +1,6 @@
 # Pump My Bike (iOS App) 🚲
 
-<img src="assets/mockup.gif" alt="Demo" height="450">
+<img src="assets/mockup.gif" alt="Demo" width="200">
 
 ## Overview
 
