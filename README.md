@@ -33,7 +33,7 @@ To get Pump My Bike running on your local machine, follow these steps:
 git clone https://github.com/MilosDenck/Pump-my-Bike.git # Replace with your actual repo link
 cd Pump-my-Bike
 ```
-3. Open in Xcode: Open the .xcodeproj or .xcworkspace file in Xcode.
+3. Open in Xcode: Open the .xcodeproj file in Xcode.
 3. Run on Simulator/Device: Select your desired simulator or a connected iOS device and run the project.
 
 ## Related Project
