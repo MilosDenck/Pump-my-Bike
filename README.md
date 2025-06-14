@@ -21,7 +21,7 @@ Pump My Bike is a native iOS application developed with Swift and SwiftUI that h
 * **UI Framework:** SwiftUI
 * **IDE:** Xcode
 * **Networking:** URLSession
-* **Mapping:** MapKit (or similar framework if used)
+* **Mapping:** MapKit
 * **Authetication:** SuperTokens
 
 ## Setup & Installation
